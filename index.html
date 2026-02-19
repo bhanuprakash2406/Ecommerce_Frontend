@@ -10,35 +10,61 @@
 </head>
 <body>
     <header>
-            <div class="logo">
-                <img src="assets/logo.png" alt="WebMart Logo">
-                <div>
-                <h2>Web<span style="color: green;">Mart</span></h2>
-                <small>Your Online Marketplace</small>
-                </div>
-            </div>
-            <div class="search">
-                <input type="text" placeholder="Search Products...">
-                <i class="bi bi-search"></i>
-            </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="cart">
-            <div class="cart-icon">
-                <i class="bi bi-cart3"></i>
-                <p>Cart</p>
-            </div>
-        <i class="bi bi-list"></i>
-        </div>
-    </header>
-    <section class="hero">
+
+<div class="logo">
+<img src="assets/logo.png">
+<div>
+<h2>Web<span style="color: green;">Mart</span></h2>
+<small>Your Online Marketplace</small>
+</div>
+</div>
+
+<div class="search">
+<input type="text" placeholder="Search Products...">
+<i class="bi bi-search"></i>
+</div>
+
+<nav>
+<ul>
+
+<li><a href="#hero">Home</a></li>
+<li><a href="#collections">Products</a></li>
+
+<li class="drop">
+<a href="#">
+<p>Account</p>
+<i class="bi bi-chevron-down"></i>
+</a>
+
+<div class="dropdown">
+<ul>
+<h3>Your Account</h3>
+<li><a href="#"><i class="bi bi-person"></i>My Profile</a></li>
+<li><a href="#"><i class="bi bi-box-seam"></i>Orders</a></li>
+<li><a href="#"><i class="bi bi-heart"></i>Wishlist (0)</a></li>
+<li><a href="#"><i class="bi bi-bell"></i>Notifications</a></li>
+</ul>
+</div>
+
+</li>
+
+</ul>
+</nav>
+
+<div class="cart">
+
+<div class="cart-icon">
+<i class="bi bi-cart3"></i>
+<p class="cart-text">Cart</p>
+</div>
+
+<i class="bi bi-list menu-toggle"></i>
+
+</div>
+
+</header>
+
+    <section class="hero" id="hero">
     <div class="hero-content">
         <h1>Biggest Sale of the Year!</h1>
         <p>The Biggest Sale of the Year Is Finally Here!
@@ -50,7 +76,7 @@
     </div>
     <img src="assets/Untitled design.png" alt="Hero Image">
 </section>
-<section class="collections">
+<section class="collections" id="collections">
     <div class="collection-grid">
         <div class="collection-item">
             <img src="assets/men.png" alt="Collection 1">
@@ -73,13 +99,90 @@
             <h3>Home</h3>
         </div>
         <div class="collection-item">
-            <img src="assets/sport.jpg" alt="Collection 4">
+            <img src="assets/sport.png" alt="Collection 4">
             <h3>Sports</h3>
         </div>
     </div>
     <h2 class="deal">Biggest Deals On Top Brands</h2>
     <div class="products" id="productGrid"></div>
+    <a class="cartdetails" href ="./scripts/cartPage.html" target="_blank"></a>
 </section>
-    <script src="scripts/app.js"></script>
+<div class="cartmenu"></div>
+<footer>
+    <div class="group_one">
+        <div class="section_one">
+            <ul>
+                <h3>ABOUT</h3>
+                <li><a href="">Contact Us</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Careers</a></li>
+                <li><a href="">Webmart Stories</a></li>
+                <li><a href="">Press</a></li>
+                <li><a href="">Corporate Information</a></li>
+            </ul>
+            <ul>
+                <h3>GROUP COMPANIES</h3>
+                <li><a href="">Myntra</a></li>
+                <li><a href="">Cleartrip</a></li>
+                <li><a href="">Shopsy</a></li>
+            </ul>
+            <ul>
+                <h3>HELP</h3>
+                <li><a href="">Payments</a></li>
+                <li><a href="">Shipping</a></li>
+                <li><a href="">Cancellation & Returns</a></li>
+                <li><a href="">FAQ</a></li>
+            </ul>
+            <ul>
+                <h3>CONSUMER POLICY</h3>
+                <li><a href="">Cancellation & Returns</a></li>
+                <li><a href="">Terms Of Use</a></li>
+                <li><a href="">Security</a></li>
+                <li><a href="">Privacy</a></li>
+                <li><a href="">Sitemap</a></li>
+                <li><a href="">Grievance Redressal</a></li>
+                <li><a href="">EPR Compliance</a></li>
+                <li><a href="">FSSAI Food Safety</a></li>
+                <li><a href="">Connect App</a></li>
+            </ul>
+        </div>
+        <div class="section_two">
+            <div>
+                <p>Mail Us:</p>
+                <span>Webmart Internet Private Limited,
+                Buildings Alyssa, Begonia &
+                Clove Embassy Tech Village,
+                Outer Ring Road, Devarabeesanahalli Village,
+                Bengaluru, 560103,
+                Karnataka, India</span>
+                <p>Social:</p>
+                <div class="icons"><i class="bi bi-facebook"></i><i class="bi bi-twitter-x"></i><i class="bi bi-instagram"></i><i class="bi bi-youtube"></i></div>
+                <span></span>
+            </div>
+            <div>
+                <p>Registered Office Address:</p>
+                <span>Webmart Internet Private Limited,
+                Buildings Alyssa, Begonia &
+                Clove Embassy Tech Village,
+                Outer Ring Road, Devarabeesanahalli Village,
+                Bengaluru, 560103,
+                Karnataka, India<br>
+                CIN : U51109KA2012PTC066107<br>
+                Telephone: <a href="" style="color: rgb(127, 184, 253);">044-45614700</a> / <a href="" style="color: rgb(127, 184, 253);">044-67415800</a></span>
+            </div>
+        </div>
+    </div>
+    <div class="group_two">
+        <p><span><i class="bi bi-shop"></i> Become a Seller</span></p>
+        <p><span><i class="bi bi-stars"></i> Advertise</span></p>
+        <p><span><i class="bi bi-gift"></i> Gift Cards</span></p>
+        <p><span><i class="bi bi-question-circle"></i> Help Center</span></p>
+        <p><span>© 2025-2026 Webmart.com</span></p>
+        <div>
+            
+        </div>
+    </div>
+</footer>
+<script src="scripts/app.js"></script>
 </body>
 </html>

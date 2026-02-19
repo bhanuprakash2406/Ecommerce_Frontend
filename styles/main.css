@@ -3,12 +3,15 @@ body{
     margin: 0;
     padding: 0;
 }
+html{
+    scroll-behavior:smooth;
+}
 header{
     display: flex;
     align-items: center;
     border-bottom: 1px solid #ddd;
-    position: sticky;
-    top: 0;
+    position: fixed;
+    width: 100%;
     background-color: white;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
     padding-right: 1rem;
@@ -59,7 +62,7 @@ header .search input{
     background: transparent;
 }
 header .cart{
-    flex: .2;
+    flex: .3;
     display: flex;
     gap: .5rem;
     color: black;
@@ -79,8 +82,8 @@ header .cart-icon i{
     font-size: 24px;
 }
 header nav{
-    flex: 1;
-    width: 40vw;
+    width: 27vw;
+    margin: 0 auto;
     display: flex;
     margin-right: 1rem;
 }
@@ -96,6 +99,7 @@ header nav ul li{
     border-radius: 4px;
     display: flex;
     padding: .6rem;
+    height: 30px;
     text-align: center;
     align-items: center;
 }
@@ -103,7 +107,7 @@ header nav ul li a{
     margin: auto;
     color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight:400;
+    font-weight:600;
     text-decoration: none;
     font-size: clamp(1rem, 1.5vw, 1.5rem);
     outline: none;
@@ -116,13 +120,51 @@ header nav ul li:hover{
 header nav ul li a:hover{
     color: black;   
 }
+nav  .dropdown{
+    position: absolute;
+    top: 65px;
+    height: 260px;
+    width: 200px;
+    left: 75%;
+    background-color:rgb(255, 255, 255);
+    border-radius: 5px;
+    display: none;
+}
+nav .dropdown ul{
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+nav .dropdown ul li{
+    width: 80%;
+}
+nav .dropdown ul li a{
+    font-weight: 400;
+    font-size: 15px;
+    display: flex;
+    column-gap: 5px;
+    width: 100%;
+}
+nav ul .drop:hover .dropdown{
+    display: block;
+}
+nav ul .drop a{
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+nav ul .drop a:hover .bi-chevron-down{
+    transform: rotate(180deg);
+}
 .bi-list {
     display: none;
 }
 .hero {
     height: 90vh;
     display: flex;
-    align-items: center;
+    padding-top: 2rem;
+    align-items: start;
     text-align: center;
     color: rgb(19, 18, 18);
 }
@@ -184,7 +226,7 @@ header nav ul li a:hover{
 .collection-item h3{
     font-size: 18px;
     color: black;
-    font-weight: 400;
+    font-weight: 600;
 }
 .collections img:hover {
     transform: scale(1.05);
@@ -201,6 +243,24 @@ header nav ul li a:hover{
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.update{
+    background-color: rgb(243, 239, 239);
+    border-radius: 10px;
+    width: 95px;
+    padding: 0 10px;
+    height: 50px;
+}
+.cupdate{
+    font-weight: 600;
+    font-size: 15px;
+    margin-left: 2px;
+}
+.cupdate a{
+    text-decoration: none;
+    outline: none;
+    color: black;
 }
 .card {
   background: #fff;
@@ -211,9 +271,9 @@ header nav ul li a:hover{
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .5rem;
   justify-content: space-between;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 400;
 }
 .card:hover {
   transform: translateY(-6px);
@@ -228,6 +288,7 @@ header nav ul li a:hover{
 .card h3 {
   font-size: 16px;
   margin: 10px 0;
+  font-weight: 400;
 }
 
 .card p {
@@ -262,6 +323,188 @@ header nav ul li a:hover{
     width: 90%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.enter{
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    height: 90vh;
+    background: rgb(234, 232, 232);
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+}
+.cartpage{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+.cartmenu{
+    display: none;
+}
+.cartmenu_none{
+    display: block;
+}
+ .productdetails{
+    width: 60%;
+    height: 89%;
+    background-color: white;
+    overflow-x: scroll;
+}
+.productdetails::-webkit-scrollbar{
+    display: none;
+}
+.productsum{
+    width: 25%;
+    padding: 10px;
+    background-color: white;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.oderplace{
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+    background-color: rgb(245, 106, 56);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+.productdetails .cart-item{
+    display: grid;
+    width: 60%;
+    grid-template-areas: "img p" "img span" ;
+    margin: 1rem auto;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgb(241, 238, 238);
+    justify-content: space-evenly;
+    gap: 1rem;
+    align-items: center;
+
+}
+.productdetails .cart-item img{
+    grid-area: img;
+}
+.productdetails .cart-item p{
+    grid-area: p; 
+    width: 25vw;
+}
+.productdetails .cart-item span{
+    grid-area: span; 
+    width: 25vw;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+}
+.productdetails .cart-item span button{
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    background: transparent;
+}
+.productdetails .cart-item span button:hover{
+    color: blue;
+}
+
+.productsum p{
+    min-height: 20vh;
+    margin: 0px 5px;
+    background-color: rgb(241, 238, 238);
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+}
+.productsum text{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    min-height: 8vh;
+    font-size: 14px;
+    padding: 0 10px;
+    margin: 10px 0;
+}
+.empty{
+  text-align:center;
+  color:#777;
+  font-weight: 600;
+  margin: auto;
+  inset: 0;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    margin: auto;
+    font-family:Arial, Helvetica, sans-serif;
+    border-top: 1px solid #ddd;
+    box-shadow: 10px 5px 6px 10px rgba(0, 0, 0, 0.15);
+}
+footer .group_one{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+footer .group_one ul{
+    list-style-type: none;
+    margin: 0 auto;
+}
+footer .group_one ul h3{
+    font-size: 13px;
+    font-weight: 100;
+    color: gray;
+}
+footer .group_one ul li a{
+    font-size: 13px;
+    text-decoration: none;
+    outline: none;
+    color: black;
+}
+footer .group_one .section_one{
+    display: flex;
+    width: 53%;
+}
+footer .group_one .section_two{
+    display: flex;
+    width: 45%;
+    padding-left: 1rem;
+    border-left: 1px solid black;
+    gap: 1rem;
+}
+footer .group_one .section_two div{
+    width: 20vw;
+}
+footer .group_one .section_two div .icons{
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+}
+footer .group_one .section_two div .icons i{
+    font-size: 20px;
+    color: black;
+}
+footer .group_one .section_two p{
+    font-size: 13px;
+    font-weight: 100;
+    color: gray;
+}
+footer .group_one .section_two span{
+    font-size: 13px;
+    color: black;
+}
+footer .group_two{
+    display: flex;
+    justify-content: space-around;
+    color: black;
+    text-align: center;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
 @media (max-width: 950px)  {
     .logo{
         gap: .2rem;
@@ -294,6 +537,23 @@ header nav ul li a:hover{
     header nav.active{
         display: block;
     }
+    nav  .dropdown{
+    top: 130px;
+    height: 300px;
+    width: 200px;
+    text-align: center;
+    left: 55%;
+    }
+    nav .dropdown ul{
+        margin-left: .5rem;
+    }
+    nav .dropdown ul li{
+    width: 80%;
+    }
+    nav .dropdown ul li:hover{
+        background-color: rgb(243, 239, 239);
+        color: black;
+    }
     header .search{
         flex: 2;
         margin-right: .5rem;
@@ -306,6 +566,23 @@ header nav ul li a:hover{
         width: 26vw;
         height: 200px;
         padding: .5rem 0;
+    }
+    .group_one{
+        flex-direction: column;
+        align-items: center;
+        margin: 0 10px;
+    }
+    footer .group_one .section_one{
+        margin-bottom:1rem ;
+        width: 100%;
+    }
+    footer .group_one .section_two{
+        border-left: none;
+        width: 100%;
+        border-top: 1px solid white;
+    }
+    footer .group_one .section_two div{
+        width: 100%;
     }
 }
 @media (max-width: 550px){
@@ -332,5 +609,34 @@ header .logo small{
         min-width: 250px;
         height: 350px;
     }
-
+    
+    .enter{
+        overflow-y: scroll;
+    }
+    .cartpage{
+        flex-direction: column;
+        height: 82vh;
+        overflow-y: scroll;
+        background-color: white;
+        align-items: center;
+        width: 100%;
+    }
+    .productdetails{
+        width: 90%;
+        background-color: transparent;
+    }
+    .productdetails .cart-item{
+        width: 90%;
+        background-color: transparent;
+    }
+    .productdetails .cart-item p{
+        min-width: 55vw;
+    }.productdetails .cart-item span{
+        min-width: 55vw;
+    }
+    .productsum{
+        width: 60%;
+        height: 10vh;
+        margin-bottom: 1rem;
+    }
 }
